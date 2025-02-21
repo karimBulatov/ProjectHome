@@ -11,4 +11,3 @@ public class HelloServlet extends HttpServlet {
         response.getWriter().println("<h1>Hello from Servlet!</h1>");
     }
 }
-

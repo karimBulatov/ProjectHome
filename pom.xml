@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -45,6 +46,18 @@
 
   <build>
     <finalName>DemoProject</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <url>http://localhost:8085/manager/html</url>
+          <server>tomcat</server> <!-- Этот сервер должен быть настроен в settings.xml -->
+          <path>/yourApp</path> <!-- Путь, по которому будет доступно ваше приложение -->
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
 </project>
